@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+
+    <!-- imports -->
+    <link rel="stylesheet" href="../dist/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/9732e68f45.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+
+<body class="page-bg overflow-hidden">
+    <div id="welcome-page" class="h-screen w-screen">
+        <header class="place-content-center flex rounded-full pt-2 pb-2 space-x-10 md:space-x-20 mt-10">
+            <!-- github -->
+            <button class="text-xl opacity-70 hover:opacity-100 transition-all text-indigo-100" 
+                    onclick="window.location.href='https://github.com/Ibetz1';">
+                <i class="fa fa-github"></i>
+            </button>
+        
+            <!-- email -->
+            <button class="text-xl opacity-70 hover:opacity-100 transition-all text-indigo-100" 
+                    onclick="window.location.href='mailto:ianbetz.22.4@gmail.com?wbesite';">
+                <i class="fa fa-envelope"></i>
+            </button>
+            
+            <!-- discord -->
+            <button class="text-xl opacity-70 hover:opacity-100 transition-all text-indigo-100" 
+                    onclick="window.location.href='https://discordapp.com/users/326888597288386560';">
+                <i class="fab fa-discord"></i>
+            </button>
+    
+            <!-- linkedin -->
+            <button class="text-xl opacity-70 hover:opacity-100 transition-all text-indigo-100" 
+                    onclick="window.location.href='https://www.linkedin.com/in/ian-betz-a27742277/';">
+                <i class="fa fa-linkedin"></i>
+            </button>
+        </header>
+
+        <div class="w-screen grid h-screen">
+            <div class = "m-auto text-center">
+                <h1 class="animate-typing overflow-hidden whitespace-nowrap
+                        border-r-indigo-100 pr-5 text-indigo-100 font-light
+                            border-r-4 text-6xl lg:text-7xl tracking-widest">
+                    Welcome!
+                </h1>
+            </div>
+            <div class="w-screen flex place-content-center h-10">
+                <button class="text-5xl md:text-7xl text-indigo-100 text-opacity-25 
+                               hover:text-opacity-100 transition-all animate-pulse hover:animate-none"
+                        onclick="document.getElementById('content-page').scrollIntoView();">
+                    <i class="fa fa-angle-down"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="content-page" class="h-screen w-screen overflow-auto">
+        <div class="w-screen flex place-content-center mt-10">
+            <button class="text-5xl md:text-7xl text-indigo-100 text-opacity-25 
+                           hover:text-opacity-100 transition-all animate-pulse hover:animate-none"
+                    onclick="document.getElementById('welcome-page').scrollIntoView();">
+                <i class="fa fa-angle-up"></i>
+            </button>
+        </div>
+
+        <div class="w-screen flex place-content-center">
+            <div class="bg-indigo-100 bg-opacity-10 px-5 py-5 rounded-3xl max-w-3xl mx-5 mt-20">
+                <h1 class="text-center text-3xl mb-5 tracking-widest text-indigo-100">
+                    <i class="fa fa-user mr-3"></i> About Me
+                </h1>
+                <p class="font-extralight text-md md:text-lg text-center text-indigo-100 ">
+                    Hello! My name is Ian Betz and I am an embedded programmer. I also have experience in Computer Graphics, Game Development and Network Engineering. I have developed many applications from internal heating algorithms to lighting engines. 
+                </p>
+    
+                <p class="font-extralight text-md md:text-lg text-center text-indigo-100 mt-4">
+                    I specialize in mid to low level systems and strive to make the fastest code possible. For the sake of speed, I've designed my own algorithms, ones faster than the industry standard!                 
+                </p>
+                <div class="grid align-middle mt-10">
+                    <button class="text-indigo-100 text-3xl opacity-25 hover:opacity-100 transition-all font-extralight">
+                        <i class="fa fa-code mr-3"></i> See Some Code
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-screen flex place-content-center">
+            <div class="bg-indigo-100 bg-opacity-10 px-10 py-5 rounded-3xl max-w-3xl mx-5 mt-10 mb-10 place-content-center grid">
+                <h1 class="text-center text-3xl mb-5 tracking-widest text-indigo-100">
+                    <i class="fa fa-phone mr-3"></i> Contact
+                </h1>
+                <div class="flex place-content-center space-x-10">
+
+                    <!-- email -->
+                    <button class="text-xl opacity-70 hover:opacity-100 transition-all text-indigo-100" 
+                            onclick="window.location.href='mailto:ianbetz.22.4@gmail.com?wbesite';">
+                        <i class="fa fa-envelope"></i>
+                    </button>
+                    
+                    <!-- discord -->
+                    <button class="text-xl opacity-70 hover:opacity-100 transition-all text-indigo-100" 
+                            onclick="window.location.href='https://discordapp.com/users/326888597288386560';">
+                        <i class="fab fa-discord"></i>
+                    </button>
+
+                    <!-- linkedin -->
+                    <button class="text-xl opacity-70 hover:opacity-100 transition-all text-indigo-100" 
+                            onclick="window.location.href='https://www.linkedin.com/in/ian-betz-a27742277/';">
+                        <i class="fa fa-linkedin"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>
