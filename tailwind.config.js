@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}", "./**/*.{html,js}"],
+  content: [
+    "./src/**/*.{html,js}", "./**/*.{html,js}",
+    "./node_modules/tw-elements/dist/js/**/*.js"
+  ],
   theme: {
     extend: {
       keyframes: {
@@ -28,7 +31,8 @@ module.exports = {
     },
   },
   plugins: [
-    require("tailwindcss-animation-delay")
+    require("tailwindcss-animation-delay"),
+    require("tw-elements/dist/plugin")
   ],
 }
 

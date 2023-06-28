@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="dist/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/9732e68f45.js" crossorigin="anonymous"></script>
+    <script type="module" src="./src/hsv_alg.js"></script>
+
 
 </head>
+
 
 <body class="code-bg">
     <header class="place-content-center flex rounded-full pt-2 pb-2 space-x-10 md:space-x-20 mt-10 mb-16">
@@ -68,6 +71,9 @@
                 <p class="font-extralight text-md md:text-lg text-center text-indigo-100 ">
                     This algorithm takes any dataset and allows for variable smoothing to be applied. I created this to work as a filter on noisy datasets and make functional analysis possible in areas it previously wasn't. 
                 </p>
+            </div>
+            <div class="mx-auto w-3/5 overflow-hidden">
+                <canvas id="line-chart"></canvas>
             </div>
         </div>
 
