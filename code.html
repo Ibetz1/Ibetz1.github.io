@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href=".">
     <title>Code Snippets</title>
 
     <!-- imports -->
     <link rel="stylesheet" href="dist/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/9732e68f45.js" crossorigin="anonymous"></script>
-    <script type="module" src="./src/hsv_alg.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 
@@ -65,15 +64,27 @@
         <!-- variable smoothing -->
         <div class="w-screen flex place-content-center">
             <div class="bg-indigo-100 bg-opacity-10 px-5 py-5 rounded-3xl max-w-3xl mx-5 mt-20">
+                <!-- alg desc -->
                 <h1 class="text-center text-2xl mb-5 tracking-widest text-indigo-100">
                     <i class="fa fa-code mr-3"></i> Variable Smoothing
                 </h1>
                 <p class="font-extralight text-md md:text-lg text-center text-indigo-100 ">
                     This algorithm takes any dataset and allows for variable smoothing to be applied. I created this to work as a filter on noisy datasets and make functional analysis possible in areas it previously wasn't. 
                 </p>
-            </div>
-            <div class="mx-auto w-3/5 overflow-hidden">
-                <canvas id="line-chart"></canvas>
+
+                <!-- chart UI -->
+                <div>
+                    <div class="mt-10 mb-10 w-full">
+                        <canvas class="p-20 w-full" id="noise-chart"></canvas>
+                    </div>
+                    <button class="mr-4 ext-lg opacity-70 hover:opacity-100 transition-all text-indigo-100" onclick="newChart()">
+                        <i class="fa fa-refresh"></i>
+                    </button>
+                    <input oninput="updateSmoothing()" id="smoothing-slider" type="range" value="50" class="w-full h-3 mb-6 rounded-lg cursor-pointer range-sm">
+    
+                    <script src="./src/noise_smoothing.js"></script>
+                </div>
+
             </div>
         </div>
 
@@ -89,10 +100,6 @@
             </div>
         </div>
     </div>
-
-
-
-
 </body>
 
 </html>
