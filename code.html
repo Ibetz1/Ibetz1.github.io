@@ -108,10 +108,11 @@
                     <div id="SmoothingExampleCode" class="hidden grid mt-5 overflow-scroll h-96 w-full">
 <pre>
 <code class="language-js">
-var noise = [];  // array containing noisy data
-var smooth = []; // array containing smoothed data
-var count = 50;  // number of data points
-var res = 2;     // smoothing resolution
+var noise = [];     // array containing noisy data
+var smooth = [];    // array containing smoothed data
+var count = 50;     // number of data points
+var res = 2;        // smoothing resolution
+var smoothing = 0.5 // how smooth the data should be
 
 // generate random noise
 for (var i = 0; i < count; i++) {
