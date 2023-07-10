@@ -11,10 +11,13 @@
     <!-- imports -->
     <link rel="stylesheet" href="dist/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="src/snippets.css">
+
     <script src="https://kit.fontawesome.com/9732e68f45.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+    <script id="tab-controller" src="./src/tab_controller.js"></script>
 </head>
-
 
 <body class="code-bg">
     <header class="place-content-center flex rounded-full pt-2 pb-2 space-x-10 md:space-x-20 mt-10 mb-16">
@@ -59,30 +62,94 @@
 
         </div>
     </div>
+
     <div class="h-screen">
-        <div>
         <!-- variable smoothing -->
         <div class="w-screen flex place-content-center">
-            <div class="bg-indigo-100 bg-opacity-10 px-5 py-5 rounded-3xl max-w-3xl mx-5 mt-20">
+            <div class="bg-indigo-100 bg-opacity-10 px-5 py-5 rounded-3xl max-w-3xl mx-5 mt-20 text-indigo-100">
                 <!-- alg desc -->
-                <h1 class="text-center text-2xl mb-5 tracking-widest text-indigo-100">
+                <h1 class="text-center text-2xl mb-5 tracking-widest">
                     <i class="fa fa-code mr-3"></i> Variable Smoothing
                 </h1>
-                <p class="font-extralight text-md md:text-lg text-center text-indigo-100 ">
+                <p class="font-extralight text-md md:text-lg text-center">
                     This algorithm takes any dataset and allows for variable smoothing to be applied. I created this to work as a filter on noisy datasets and make functional analysis possible in areas it previously wasn't. 
                 </p>
 
+
+                <!-- chart Tabs -->
+                <div class="w-full text-center flex mt-20">
+                    <button id="smoothingDemoButton" 
+                            class="font-extralight text-2xl w-1/2 p-1 bg-slate-500 bg-opacity-50 hover:bg-opacity-80 transition-all rounded-md mr-2"
+                            onclick="SmoothingDemoClick()">
+                        Demo
+                    </button>
+
+                    <button id="smoothingCodeButton" 
+                            class="font-extralight text-2xl w-1/2 p-1 bg-slate-600 bg-opacity-50 hover:bg-opacity-80 transition-all rounded-md ml-2"
+                            onclick="SmoothingCodeClick()">
+                        Code
+                    </button>
+                </div>
+
                 <!-- chart UI -->
                 <div>
-                    <div class="mt-10 mb-10 w-full">
-                        <canvas class="p-20 w-full" id="noise-chart"></canvas>
+                    <div id="SmoothingExampleChart" class="">
+                        <div class="w-full">
+                            <canvas class="p-5 w-full text-5xl" id="noise-chart"></canvas>
+                        </div>
+                        <button class="mr-4 ext-lg opacity-70 hover:opacity-100 transition-all text-indigo-100" onclick="newChart()">
+                            <i class="fa fa-refresh"></i>
+                        </button>
+                        <input oninput="updateSmoothing()" id="smoothing-slider" type="range" value="50" class="w-full h-3 rounded-lg cursor-pointer range-sm">
+        
+                        <script src="./src/noise_smoothing.js"></script>
                     </div>
-                    <button class="mr-4 ext-lg opacity-70 hover:opacity-100 transition-all text-indigo-100" onclick="newChart()">
-                        <i class="fa fa-refresh"></i>
-                    </button>
-                    <input oninput="updateSmoothing()" id="smoothing-slider" type="range" value="50" class="w-full h-3 mb-6 rounded-lg cursor-pointer range-sm">
-    
-                    <script src="./src/noise_smoothing.js"></script>
+
+                    <div id="SmoothingExampleCode" class="hidden grid mt-5 overflow-scroll h-96 w-full">
+<pre>
+<code class="language-js">
+var noise = [];  // array containing noisy data
+var smooth = []; // array containing smoothed data
+var count = 50;  // number of data points
+var res = 2;     // smoothing resolution
+
+// generate random noise
+for (var i = 0; i < count; i++) {
+    var y = Math.random() * 50;
+    noise.push({
+        "x": i,
+        "y": y
+    });
+}
+
+// noise smoothing algorithm
+for (var i = 1; i < noise.length; i++) {
+    var p1_x = noise[i - 1]["x"];
+    var p2_x = noise[i]["x"];
+
+    var step = (p2_x - p1_x) / res;
+    for (var j = 0; j < res; j++) {
+
+        var x = p2_x + (j * step)
+        var y = 20 // define base y offset
+
+        // adjust y value according to smoothing
+        for (var k = 0; k < noise.length - 1; k++) {
+            var dx = noise[k + 1]["x"] + noise[k]["x"]
+            var dy = noise[k + 1]["y"] - noise[k]["y"]
+            y -= dy / (1 + Math.pow(1 + Math.E, smoothing * ( x + dx / -2 )))
+        }
+
+        // append x and y values to smoothed array
+        smooth.push(
+            {"x": x, "y": y}
+        )
+        label.push(x)
+    }
+}
+</code>
+</pre>
+                    </div>
                 </div>
 
             </div>

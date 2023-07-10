@@ -41,7 +41,10 @@ const configLineChart = {
                     padding: 20,
                     boxWidth: 15,
                     useBorderRadius: true,
-                    borderRadius: 3
+                    borderRadius: 3,
+                    font: {
+                        size: 16
+                    }
                 }
             }
         }

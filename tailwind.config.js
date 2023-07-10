@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,js}", 
-    "./**/*.{html,js}",
+    "./src/**/*.{html,js}", "./**/*.{html,js}",
   ],
   theme: {
     extend: {
@@ -31,8 +30,7 @@ module.exports = {
     },
   },
   plugins: [
-    require("tailwindcss-animation-delay"),
-    require("tw-elements/dist/plugin")
-  ],
+    require("tailwindcss-animation-delay")
+ ],
 }
 
