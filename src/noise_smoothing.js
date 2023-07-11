@@ -1,3 +1,6 @@
+var smoothingScript = {}
+
+
 var label = []
 var noise = []
 var smooth = []
@@ -21,7 +24,7 @@ const data = {
     ],
 };
 
-const configLineChart = {
+const SmoothingConfigLineChart = {
     type: "line",
     data,
     options: {
@@ -53,14 +56,14 @@ const configLineChart = {
 
 var chart = new Chart(
     document.getElementById("noise-chart"),
-    configLineChart
+    SmoothingConfigLineChart
 );
 
 // noise //
 ///////////
 var count = 50;
 
-function noise_chart() {
+function noiseChart() {
     for (var i = 0; i < count; i++) {
         var y = Math.random() * 50
         noise.push({
@@ -75,7 +78,7 @@ function noise_chart() {
 ////////////
 var res = 2
 
-function smooth_chart(smoothing) {
+function smoothChart(smoothing) {
 
     for (var i = 1; i < noise.length; i++) {
         var p1_x = noise[i - 1]["x"];
@@ -106,7 +109,7 @@ function updateSmoothing() {
     smooth.length = 0
     label.length = 0
 
-    smooth_chart((100 - smoothing) / 50)
+    smoothChart((100 - smoothing) / 50)
     chart.data.datasets[0].data = smooth
     chart.update("none")
 }
@@ -120,12 +123,11 @@ function newChart() {
     var smoothing = document.getElementById("smoothing-slider").value;
 
     // gen charts
-    noise_chart() 
-    smooth_chart((100 - smoothing) / 50)
+    noiseChart() 
+    smoothChart((100 - smoothing) / 50)
 
     chart.data.datasets[0].data = smooth
     chart.update("none")
 }
-
 
 newChart()

@@ -64,6 +64,7 @@
     </div>
 
     <div class="h-screen">
+
         <!-- variable smoothing -->
         <div class="w-screen flex place-content-center">
             <div class="bg-indigo-100 bg-opacity-10 px-5 py-5 rounded-3xl max-w-3xl mx-5 mt-20 text-indigo-100">
@@ -162,9 +163,18 @@ for (var i = 1; i < noise.length; i++) {
                 <h1 class="text-center text-2xl mb-5 tracking-widest text-indigo-100">
                     <i class="fa fa-code mr-3"></i> Compact HSV to RGB
                 </h1>
+
                 <p class="font-extralight text-md md:text-lg text-center text-indigo-100 ">
                     This algorithm converts HSV to RGB color mode. I created this algorithm for the sake of speed, rather than using branches, this algorithm uses math to convert HSV to RGB.
                 </p>
+
+                <div id="HsvExampleChart" class="">
+                    <div class="w-full">
+                        <canvas class="p-5 w-full text-5xl" id="hsv-chart"></canvas>
+                    </div>
+    
+                    <script src="./src/hsv_conversion.js"></script>
+                </div>
             </div>
         </div>
     </div>
