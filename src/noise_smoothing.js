@@ -5,7 +5,7 @@ var label = []
 var noise = []
 var smooth = []
 
-const data = {
+const SmoothingData = {
     labels: label,
     datasets: [
         {
@@ -26,7 +26,7 @@ const data = {
 
 const SmoothingConfigLineChart = {
     type: "line",
-    data,
+    data: SmoothingData,
     options: {
         elements: {
             point:{
