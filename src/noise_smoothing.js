@@ -28,6 +28,8 @@ const SmoothingConfigLineChart = {
     type: "line",
     data: SmoothingData,
     options: {
+        responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point:{
                 radius: 0

@@ -38,6 +38,9 @@ const HSVconfigLineChart = {
     type: "line",
     data: hsvData,
     options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
         elements: {
             point:{
                 radius: 0
