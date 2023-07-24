@@ -32,3 +32,25 @@ function SmoothingDemoClick() {
     selectTab(tabDemo, buttonDemo)
     deselectTab(tabCode, buttonCode)
 }
+
+// open hsv code tab
+function HsvCodeClick() {
+    var buttonDemo = document.getElementById("hsvDemoButton")
+    var buttonCode = document.getElementById("hsvCodeButton")
+    var tabDemo = document.getElementById("hsvExampleChart")
+    var tabCode = document.getElementById("hsvExampleCode")
+
+    selectTab(tabCode, buttonCode)
+    deselectTab(tabDemo, buttonDemo)
+}
+
+// open hsv example tab
+function HsvDemoClick() {
+    var buttonDemo = document.getElementById("hsvDemoButton")
+    var buttonCode = document.getElementById("hsvCodeButton")
+    var tabDemo = document.getElementById("hsvExampleChart")
+    var tabCode = document.getElementById("hsvExampleCode")
+
+    selectTab(tabDemo, buttonDemo)
+    deselectTab(tabCode, buttonCode)
+}
